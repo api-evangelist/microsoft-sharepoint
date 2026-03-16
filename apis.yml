@@ -1,5 +1,22 @@
 aid: microsoft-sharepoint
+name: Microsoft SharePoint
+description: >-
+  Microsoft SharePoint is a web-based collaboration platform that provides
+  document management, content management, and team collaboration capabilities.
+  It offers REST APIs, Microsoft Graph integration, and the SharePoint Framework
+  for customization and extension.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - SharePoint
+  - Content Management
+  - Collaboration
+  - Microsoft 365
+  - Microsoft
 url: https://raw.githubusercontent.com/api-evangelist/microsoft-sharepoint/refs/heads/main/apis.yml
+created: '2024-01-01'
+modified: '2026-03-16'
+specificationVersion: '0.19'
 apis:
   - aid: microsoft-sharepoint:rest-api
     name: SharePoint REST API
@@ -7,14 +24,14 @@ apis:
       - SharePoint
       - Content Management
       - Collaboration
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
     baseURL: https://{tenant}.sharepoint.com/_api/
     humanURL: https://learn.microsoft.com/en-us/sharepoint/dev/sp-add-ins/get-to-know-the-sharepoint-rest-service
     properties:
       - url: https://learn.microsoft.com/en-us/sharepoint/dev/sp-add-ins/get-to-know-the-sharepoint-rest-service
         type: Documentation
       - url: https://learn.microsoft.com/en-us/sharepoint/dev/apis/sharepoint-rest-graph
-        type: API Reference
+        type: Reference
     description: >-
       The SharePoint REST API provides direct access to SharePoint sites,
       lists, libraries, items, and other resources using OData endpoints.
@@ -27,7 +44,7 @@ apis:
       - SharePoint
       - Microsoft Graph
       - Sites
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
     baseURL: https://graph.microsoft.com/v1.0/
     humanURL: https://learn.microsoft.com/en-us/graph/api/resources/sharepoint
     properties:
@@ -45,7 +62,7 @@ apis:
       - SharePoint
       - Webhooks
       - Events
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
     baseURL: https://{tenant}.sharepoint.com/_api/
     humanURL: https://learn.microsoft.com/en-us/sharepoint/dev/apis/webhooks/overview-sharepoint-webhooks
     properties:
@@ -63,7 +80,7 @@ apis:
       - SharePoint
       - Search
       - Content Discovery
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
     baseURL: https://{tenant}.sharepoint.com/_api/search/
     humanURL: https://learn.microsoft.com/en-us/sharepoint/dev/general-development/sharepoint-search-rest-api-overview
     properties:
@@ -82,8 +99,7 @@ apis:
       - Framework
       - Web Parts
       - Extensions
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
-    baseURL: https://api.example.com
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
     humanURL: https://learn.microsoft.com/en-us/sharepoint/dev/spfx/sharepoint-framework-overview
     properties:
       - url: https://learn.microsoft.com/en-us/sharepoint/dev/spfx/sharepoint-framework-overview
@@ -97,6 +113,10 @@ apis:
 common:
   - type: Portal
     url: https://portal.azure.com/
+  - type: Website
+    url: https://www.microsoft.com/en-us/microsoft-365/sharepoint/collaboration
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/sharepoint/dev/
   - type: Developer Portal
     url: https://developer.microsoft.com/en-us/sharepoint
   - type: Authentication
@@ -112,5 +132,5 @@ common:
   - type: Support
     url: https://support.microsoft.com/
 maintainers:
-  - name: Kin Lane
+  - FN: Kin Lane
     email: kin@apievangelist.com
