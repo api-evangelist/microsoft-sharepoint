@@ -32,6 +32,8 @@ apis:
         type: Documentation
       - url: https://learn.microsoft.com/en-us/sharepoint/dev/apis/sharepoint-rest-graph
         type: Reference
+      - url: openapi/microsoft-sharepoint-openapi.yml
+        type: OpenAPI
     description: >-
       The SharePoint REST API provides direct access to SharePoint sites,
       lists, libraries, items, and other resources using OData endpoints.
