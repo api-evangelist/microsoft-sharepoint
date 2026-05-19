@@ -1,0 +1,102 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: SharePoint REST API — Web
+  description: 'SharePoint REST API — Web. 2 operations. Lead operation: Get web (site). Self-contained Naftiko capability
+    covering one Microsoft Sharepoint business surface.'
+  tags:
+  - Microsoft Sharepoint
+  - Web
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MICROSOFT_SHAREPOINT_API_KEY: MICROSOFT_SHAREPOINT_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: microsoft-sharepoint-web
+    baseUri: https://{tenant}.sharepoint.com/_api
+    description: SharePoint REST API — Web business capability. Self-contained, no shared references.
+    resources:
+    - name: web
+      path: /web
+      operations:
+      - name: getweb
+        method: GET
+        description: Get web (site)
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: web-title
+      path: /web/title
+      operations:
+      - name: getwebtitle
+        method: GET
+        description: Get web title
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: bearer
+      token: '{{env.MICROSOFT_SHAREPOINT_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: microsoft-sharepoint-web-rest
+    port: 8080
+    description: REST adapter for SharePoint REST API — Web. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/web
+      name: web
+      description: REST surface for web.
+      operations:
+      - method: GET
+        name: getweb
+        description: Get web (site)
+        call: microsoft-sharepoint-web.getweb
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/web/title
+      name: web-title
+      description: REST surface for web-title.
+      operations:
+      - method: GET
+        name: getwebtitle
+        description: Get web title
+        call: microsoft-sharepoint-web.getwebtitle
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: microsoft-sharepoint-web-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for SharePoint REST API — Web. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: get-web-site
+      description: Get web (site)
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: microsoft-sharepoint-web.getweb
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-web-title
+      description: Get web title
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: microsoft-sharepoint-web.getwebtitle
+      outputParameters:
+      - type: object
+        mapping: $.

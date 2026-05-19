@@ -1,0 +1,134 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: SharePoint REST API — Files
+  description: 'SharePoint REST API — Files. 3 operations. Lead operation: Download file content. Self-contained Naftiko capability
+    covering one Microsoft Sharepoint business surface.'
+  tags:
+  - Microsoft Sharepoint
+  - Files
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MICROSOFT_SHAREPOINT_API_KEY: MICROSOFT_SHAREPOINT_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: microsoft-sharepoint-files
+    baseUri: https://{tenant}.sharepoint.com/_api
+    description: SharePoint REST API — Files business capability. Self-contained, no shared references.
+    resources:
+    - name: web-GetFileByServerRelativeUrl('{filePath}')-$value
+      path: /web/GetFileByServerRelativeUrl('{filePath}')/$value
+      operations:
+      - name: downloadfile
+        method: GET
+        description: Download file content
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: web-GetFolderByServerRelativeUrl('{folderPath}')
+      path: /web/GetFolderByServerRelativeUrl('{folderPath}')
+      operations:
+      - name: getfolder
+        method: GET
+        description: Get folder by server-relative URL
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: web-GetFolderByServerRelativeUrl('{folderPath}')-Files
+      path: /web/GetFolderByServerRelativeUrl('{folderPath}')/Files
+      operations:
+      - name: listfolderfiles
+        method: GET
+        description: List files in folder
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: bearer
+      token: '{{env.MICROSOFT_SHAREPOINT_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: microsoft-sharepoint-files-rest
+    port: 8080
+    description: REST adapter for SharePoint REST API — Files. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/web/getfilebyserverrelativeurl-filepath/value
+      name: web-getfilebyserverrelativeurl-filepath-value
+      description: REST surface for web-GetFileByServerRelativeUrl('{filePath}')-$value.
+      operations:
+      - method: GET
+        name: downloadfile
+        description: Download file content
+        call: microsoft-sharepoint-files.downloadfile
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/web/getfolderbyserverrelativeurl-folderpath
+      name: web-getfolderbyserverrelativeurl-folderpath
+      description: REST surface for web-GetFolderByServerRelativeUrl('{folderPath}').
+      operations:
+      - method: GET
+        name: getfolder
+        description: Get folder by server-relative URL
+        call: microsoft-sharepoint-files.getfolder
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/web/getfolderbyserverrelativeurl-folderpath/files
+      name: web-getfolderbyserverrelativeurl-folderpath-files
+      description: REST surface for web-GetFolderByServerRelativeUrl('{folderPath}')-Files.
+      operations:
+      - method: GET
+        name: listfolderfiles
+        description: List files in folder
+        call: microsoft-sharepoint-files.listfolderfiles
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: microsoft-sharepoint-files-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for SharePoint REST API — Files. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: download-file-content
+      description: Download file content
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: microsoft-sharepoint-files.downloadfile
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-folder-server-relative-url
+      description: Get folder by server-relative URL
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: microsoft-sharepoint-files.getfolder
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-files-folder
+      description: List files in folder
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: microsoft-sharepoint-files.listfolderfiles
+      outputParameters:
+      - type: object
+        mapping: $.
