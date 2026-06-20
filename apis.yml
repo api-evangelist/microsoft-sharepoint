@@ -5,7 +5,7 @@ description: >-
   team collaboration capabilities. It offers REST APIs, Microsoft Graph integration, and the SharePoint Framework for
   customization and extension.
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - Collaboration
   - Content Management
@@ -23,7 +23,7 @@ apis:
       - Collaboration
       - Content Management
       - SharePoint
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     baseURL: https://{tenant}.sharepoint.com/_api/
     humanURL: https://learn.microsoft.com/en-us/sharepoint/dev/sp-add-ins/get-to-know-the-sharepoint-rest-service
     properties:
@@ -43,7 +43,7 @@ apis:
       - Microsoft Graph
       - SharePoint
       - Sites
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     baseURL: https://graph.microsoft.com/v1.0/
     humanURL: https://learn.microsoft.com/en-us/graph/api/resources/sharepoint
     properties:
@@ -59,7 +59,7 @@ apis:
       - Events
       - SharePoint
       - Webhooks
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     baseURL: https://{tenant}.sharepoint.com/_api/
     humanURL: https://learn.microsoft.com/en-us/sharepoint/dev/apis/webhooks/overview-sharepoint-webhooks
     properties:
@@ -75,7 +75,7 @@ apis:
       - Content Discovery
       - Search
       - SharePoint
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     baseURL: https://{tenant}.sharepoint.com/_api/search/
     humanURL: https://learn.microsoft.com/en-us/sharepoint/dev/general-development/sharepoint-search-rest-api-overview
     properties:
@@ -92,7 +92,7 @@ apis:
       - Framework
       - SharePoint
       - Web Parts
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://learn.microsoft.com/en-us/sharepoint/dev/spfx/sharepoint-framework-overview
     properties:
       - url: https://learn.microsoft.com/en-us/sharepoint/dev/spfx/sharepoint-framework-overview
