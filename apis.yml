@@ -108,7 +108,7 @@ common:
     url: https://www.microsoft.com/en-us/microsoft-365/sharepoint/collaboration
   - type: Documentation
     url: https://learn.microsoft.com/en-us/sharepoint/dev/
-  - type: Developer Portal
+  - type: DeveloperPortal
     url: https://developer.microsoft.com/en-us/sharepoint
   - type: Authentication
     url: https://learn.microsoft.com/en-us/sharepoint/dev/solution-guidance/security-apponly-azureacs
