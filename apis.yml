@@ -102,6 +102,10 @@ apis:
       adaptive card extensions for SharePoint and Microsoft Teams. It uses modern web technologies including TypeScript,
       React, and Node.js to create customizations that run in the context of SharePoint pages.
 common:
+  - type: DomainSecurity
+    url: security/microsoft-sharepoint-domain-security.yml
+  - type: Authentication
+    url: authentication/microsoft-sharepoint-authentication.yml
   - type: Portal
     url: https://portal.azure.com/
   - type: Website
@@ -125,6 +129,8 @@ common:
     url: https://support.microsoft.com/
   - type: Integrations
     url: https://www.microsoft.com/en-us/marketplace
+  - url: https://techcommunity.microsoft.com/t5/s/gxcuf89792/rss/board?board.id=SPBlog
+    type: Blog
 integrations:
   - name: Microsoft
   - name: Two people looking at a computer.
