@@ -102,6 +102,8 @@ apis:
       adaptive card extensions for SharePoint and Microsoft Teams. It uses modern web technologies including TypeScript,
       React, and Node.js to create customizations that run in the context of SharePoint pages.
 common:
+  - type: AgenticAccess
+    url: agentic-access/microsoft-sharepoint-agentic-access.yml
   - type: DomainSecurity
     url: security/microsoft-sharepoint-domain-security.yml
   - type: Authentication
