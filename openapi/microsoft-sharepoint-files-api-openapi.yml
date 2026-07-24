@@ -1,0 +1,74 @@
+openapi: 3.1.0
+info:
+  title: SharePoint REST $batch $batch Files API
+  description: Minimal OpenAPI definition for the SharePoint Online REST/OData web service exposing site, web, list, and list item resources.
+  version: '1.0'
+  x-generated-from: https://learn.microsoft.com/en-us/sharepoint/dev/sp-add-ins/get-to-know-the-sharepoint-rest-service
+  x-generated-by: claude-crawl-2026-05-08
+servers:
+- url: https://{tenant}.sharepoint.com/_api
+  description: SharePoint site collection root REST endpoint
+  variables:
+    tenant:
+      default: contoso
+security:
+- bearerAuth: []
+tags:
+- name: Files
+paths:
+  /web/GetFolderByServerRelativeUrl('{folderPath}'):
+    parameters:
+    - in: path
+      name: folderPath
+      required: true
+      schema:
+        type: string
+    get:
+      tags:
+      - Files
+      summary: Get folder by server-relative URL
+      operationId: getFolder
+      responses:
+        '200':
+          description: OK
+  /web/GetFolderByServerRelativeUrl('{folderPath}')/Files:
+    parameters:
+    - in: path
+      name: folderPath
+      required: true
+      schema:
+        type: string
+    get:
+      tags:
+      - Files
+      summary: List files in folder
+      operationId: listFolderFiles
+      responses:
+        '200':
+          description: OK
+  /web/GetFileByServerRelativeUrl('{filePath}')/$value:
+    parameters:
+    - in: path
+      name: filePath
+      required: true
+      schema:
+        type: string
+    get:
+      tags:
+      - Files
+      summary: Download file content
+      operationId: downloadFile
+      responses:
+        '200':
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

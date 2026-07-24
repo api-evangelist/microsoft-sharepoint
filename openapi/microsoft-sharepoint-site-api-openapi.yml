@@ -1,0 +1,41 @@
+openapi: 3.1.0
+info:
+  title: SharePoint REST $batch $batch Site API
+  description: Minimal OpenAPI definition for the SharePoint Online REST/OData web service exposing site, web, list, and list item resources.
+  version: '1.0'
+  x-generated-from: https://learn.microsoft.com/en-us/sharepoint/dev/sp-add-ins/get-to-know-the-sharepoint-rest-service
+  x-generated-by: claude-crawl-2026-05-08
+servers:
+- url: https://{tenant}.sharepoint.com/_api
+  description: SharePoint site collection root REST endpoint
+  variables:
+    tenant:
+      default: contoso
+security:
+- bearerAuth: []
+tags:
+- name: Site
+paths:
+  /site:
+    get:
+      tags:
+      - Site
+      summary: Get site collection
+      operationId: getSite
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericObject'
+components:
+  schemas:
+    GenericObject:
+      type: object
+      additionalProperties: true
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
