@@ -5,7 +5,20 @@ description: >-
   team collaboration capabilities. It offers REST APIs, Microsoft Graph integration, and the SharePoint Framework for
   customization and extension.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/microsoft-sharepoint.png
 tags:
   - Collaboration
   - Content Management
@@ -17,90 +30,171 @@ created: '2024-01-01'
 modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
-  - aid: microsoft-sharepoint:rest-api
-    name: SharePoint REST API
-    tags:
-      - Collaboration
-      - Content Management
-      - SharePoint
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    baseURL: https://{tenant}.sharepoint.com/_api/
-    humanURL: https://learn.microsoft.com/en-us/sharepoint/dev/sp-add-ins/get-to-know-the-sharepoint-rest-service
-    properties:
-      - url: https://learn.microsoft.com/en-us/sharepoint/dev/sp-add-ins/get-to-know-the-sharepoint-rest-service
-        type: Documentation
-      - url: https://learn.microsoft.com/en-us/sharepoint/dev/apis/sharepoint-rest-graph
-        type: Reference
-      - url: openapi/microsoft-sharepoint-openapi.yml
-        type: OpenAPI
-    description: >-
-      The SharePoint REST API provides direct access to SharePoint sites, lists, libraries, items, and other resources
-      using OData endpoints. Developers can perform CRUD operations on SharePoint content, manage site structures, work
-      with content types, and interact with search and taxonomy services.
-  - aid: microsoft-sharepoint:graph-sites-api
-    name: Microsoft Graph SharePoint Sites API
-    tags:
-      - Microsoft Graph
-      - SharePoint
-      - Sites
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    baseURL: https://graph.microsoft.com/v1.0/
-    humanURL: https://learn.microsoft.com/en-us/graph/api/resources/sharepoint
-    properties:
-      - url: https://learn.microsoft.com/en-us/graph/api/resources/sharepoint
-        type: Documentation
-    description: >-
-      The Microsoft Graph SharePoint Sites API provides access to SharePoint sites, lists, and document libraries
-      through the unified Microsoft Graph endpoint. It enables developers to manage site content, list items, drive
-      items, and site permissions using a consistent REST interface alongside other Microsoft 365 services.
-  - aid: microsoft-sharepoint:webhooks-api
-    name: SharePoint Webhooks API
-    tags:
-      - Events
-      - SharePoint
-      - Webhooks
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    baseURL: https://{tenant}.sharepoint.com/_api/
-    humanURL: https://learn.microsoft.com/en-us/sharepoint/dev/apis/webhooks/overview-sharepoint-webhooks
-    properties:
-      - url: https://learn.microsoft.com/en-us/sharepoint/dev/apis/webhooks/overview-sharepoint-webhooks
-        type: Documentation
-    description: >-
-      The SharePoint Webhooks API enables applications to subscribe to change notifications on SharePoint lists and
-      libraries. When items are created, updated, or deleted, SharePoint sends notifications to registered webhook
-      endpoints, enabling real-time event-driven integrations without polling.
-  - aid: microsoft-sharepoint:search-api
-    name: SharePoint Search REST API
-    tags:
-      - Content Discovery
-      - Search
-      - SharePoint
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    baseURL: https://{tenant}.sharepoint.com/_api/search/
-    humanURL: https://learn.microsoft.com/en-us/sharepoint/dev/general-development/sharepoint-search-rest-api-overview
-    properties:
-      - url: https://learn.microsoft.com/en-us/sharepoint/dev/general-development/sharepoint-search-rest-api-overview
-        type: Documentation
-    description: >-
-      The SharePoint Search REST API provides full-text search capabilities across SharePoint content including sites,
-      lists, libraries, and documents. It supports keyword query language, query refinement, result sorting, and content
-      source targeting for comprehensive enterprise search scenarios.
-  - aid: microsoft-sharepoint:framework
-    name: SharePoint Framework (SPFx)
-    tags:
-      - Extensions
-      - Framework
-      - SharePoint
-      - Web Parts
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://learn.microsoft.com/en-us/sharepoint/dev/spfx/sharepoint-framework-overview
-    properties:
-      - url: https://learn.microsoft.com/en-us/sharepoint/dev/spfx/sharepoint-framework-overview
-        type: Documentation
-    description: >-
-      The SharePoint Framework (SPFx) is a development model for building client-side web parts, extensions, and
-      adaptive card extensions for SharePoint and Microsoft Teams. It uses modern web technologies including TypeScript,
-      React, and Node.js to create customizations that run in the context of SharePoint pages.
+- aid: microsoft-sharepoint:graph-sites-api
+  name: Microsoft Graph SharePoint Sites API
+  tags:
+  - Microsoft Graph
+  - SharePoint
+  - Sites
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  baseURL: https://graph.microsoft.com/v1.0/
+  humanURL: https://learn.microsoft.com/en-us/graph/api/resources/sharepoint
+  properties:
+  - url: https://learn.microsoft.com/en-us/graph/api/resources/sharepoint
+    type: Documentation
+  description: >-
+    The Microsoft Graph SharePoint Sites API provides access to SharePoint sites, lists, and document
+    libraries through the unified Microsoft Graph endpoint. It enables developers to manage site content,
+    list items, drive items, and site permissions using a consistent REST interface alongside other Microsoft
+    365 services.
+- aid: microsoft-sharepoint:webhooks-api
+  name: SharePoint Webhooks API
+  tags:
+  - Events
+  - SharePoint
+  - Webhooks
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  baseURL: https://{tenant}.sharepoint.com/_api/
+  humanURL: >-
+    https://learn.microsoft.com/en-us/sharepoint/dev/apis/webhooks/overview-sharepoint-webhooks
+  properties:
+  - url: >-
+      https://learn.microsoft.com/en-us/sharepoint/dev/apis/webhooks/overview-sharepoint-webhooks
+    type: Documentation
+  description: >-
+    The SharePoint Webhooks API enables applications to subscribe to change notifications on SharePoint
+    lists and libraries. When items are created, updated, or deleted, SharePoint sends notifications to
+    registered webhook endpoints, enabling real-time event-driven integrations without polling.
+- aid: microsoft-sharepoint:search-api
+  name: SharePoint Search REST API
+  tags:
+  - Content Discovery
+  - Search
+  - SharePoint
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  baseURL: https://{tenant}.sharepoint.com/_api/search/
+  humanURL: >-
+    https://learn.microsoft.com/en-us/sharepoint/dev/general-development/sharepoint-search-rest-api-overview
+  properties:
+  - url: >-
+      https://learn.microsoft.com/en-us/sharepoint/dev/general-development/sharepoint-search-rest-api-overview
+    type: Documentation
+  description: >-
+    The SharePoint Search REST API provides full-text search capabilities across SharePoint content including
+    sites, lists, libraries, and documents. It supports keyword query language, query refinement, result
+    sorting, and content source targeting for comprehensive enterprise search scenarios.
+- aid: microsoft-sharepoint:framework
+  name: SharePoint Framework (SPFx)
+  tags:
+  - Extensions
+  - Framework
+  - SharePoint
+  - Web Parts
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://learn.microsoft.com/en-us/sharepoint/dev/spfx/sharepoint-framework-overview
+  properties:
+  - url: https://learn.microsoft.com/en-us/sharepoint/dev/spfx/sharepoint-framework-overview
+    type: Documentation
+  description: >-
+    The SharePoint Framework (SPFx) is a development model for building client-side web parts, extensions,
+    and adaptive card extensions for SharePoint and Microsoft Teams. It uses modern web technologies including
+    TypeScript, React, and Node.js to create customizations that run in the context of SharePoint pages.
+- aid: microsoft-sharepoint:microsoft-sharepoint-batch-api
+  name: Microsoft SharePoint $batch API
+  description: The $batch API from Microsoft SharePoint — 1 operation(s) for $batch.
+  humanURL: >-
+    https://learn.microsoft.com/en-us/sharepoint/dev/sp-add-ins/get-to-know-the-sharepoint-rest-service
+  baseURL: https://{tenant}.sharepoint.com/_api/
+  tags:
+  - $batch
+  properties:
+  - type: OpenAPI
+    url: openapi/microsoft-sharepoint-batch-api-openapi.yml
+  - type: Documentation
+    url: >-
+      https://learn.microsoft.com/en-us/sharepoint/dev/sp-add-ins/get-to-know-the-sharepoint-rest-service
+  - type: Reference
+    url: https://learn.microsoft.com/en-us/sharepoint/dev/apis/sharepoint-rest-graph
+- aid: microsoft-sharepoint:microsoft-sharepoint-files-api
+  name: Microsoft SharePoint Files API
+  description: The Files API from Microsoft SharePoint — 3 operation(s) for files.
+  humanURL: >-
+    https://learn.microsoft.com/en-us/sharepoint/dev/sp-add-ins/get-to-know-the-sharepoint-rest-service
+  baseURL: https://{tenant}.sharepoint.com/_api/
+  tags:
+  - Files
+  properties:
+  - type: OpenAPI
+    url: openapi/microsoft-sharepoint-files-api-openapi.yml
+  - type: Documentation
+    url: >-
+      https://learn.microsoft.com/en-us/sharepoint/dev/sp-add-ins/get-to-know-the-sharepoint-rest-service
+  - type: Reference
+    url: https://learn.microsoft.com/en-us/sharepoint/dev/apis/sharepoint-rest-graph
+- aid: microsoft-sharepoint:microsoft-sharepoint-listitems-api
+  name: Microsoft SharePoint ListItems API
+  description: The ListItems API from Microsoft SharePoint — 2 operation(s) for listitems.
+  humanURL: >-
+    https://learn.microsoft.com/en-us/sharepoint/dev/sp-add-ins/get-to-know-the-sharepoint-rest-service
+  baseURL: https://{tenant}.sharepoint.com/_api/
+  tags:
+  - ListItems
+  properties:
+  - type: OpenAPI
+    url: openapi/microsoft-sharepoint-listitems-api-openapi.yml
+  - type: Documentation
+    url: >-
+      https://learn.microsoft.com/en-us/sharepoint/dev/sp-add-ins/get-to-know-the-sharepoint-rest-service
+  - type: Reference
+    url: https://learn.microsoft.com/en-us/sharepoint/dev/apis/sharepoint-rest-graph
+- aid: microsoft-sharepoint:microsoft-sharepoint-lists-api
+  name: Microsoft SharePoint Lists API
+  description: The Lists API from Microsoft SharePoint — 2 operation(s) for lists.
+  humanURL: >-
+    https://learn.microsoft.com/en-us/sharepoint/dev/sp-add-ins/get-to-know-the-sharepoint-rest-service
+  baseURL: https://{tenant}.sharepoint.com/_api/
+  tags:
+  - Lists
+  properties:
+  - type: OpenAPI
+    url: openapi/microsoft-sharepoint-lists-api-openapi.yml
+  - type: Documentation
+    url: >-
+      https://learn.microsoft.com/en-us/sharepoint/dev/sp-add-ins/get-to-know-the-sharepoint-rest-service
+  - type: Reference
+    url: https://learn.microsoft.com/en-us/sharepoint/dev/apis/sharepoint-rest-graph
+- aid: microsoft-sharepoint:microsoft-sharepoint-site-api
+  name: Microsoft SharePoint Site API
+  description: The Site API from Microsoft SharePoint — 1 operation(s) for site.
+  humanURL: >-
+    https://learn.microsoft.com/en-us/sharepoint/dev/sp-add-ins/get-to-know-the-sharepoint-rest-service
+  baseURL: https://{tenant}.sharepoint.com/_api/
+  tags:
+  - Site
+  properties:
+  - type: OpenAPI
+    url: openapi/microsoft-sharepoint-site-api-openapi.yml
+  - type: Documentation
+    url: >-
+      https://learn.microsoft.com/en-us/sharepoint/dev/sp-add-ins/get-to-know-the-sharepoint-rest-service
+  - type: Reference
+    url: https://learn.microsoft.com/en-us/sharepoint/dev/apis/sharepoint-rest-graph
+- aid: microsoft-sharepoint:microsoft-sharepoint-web-api
+  name: Microsoft SharePoint Web API
+  description: The Web API from Microsoft SharePoint — 2 operation(s) for web.
+  humanURL: >-
+    https://learn.microsoft.com/en-us/sharepoint/dev/sp-add-ins/get-to-know-the-sharepoint-rest-service
+  baseURL: https://{tenant}.sharepoint.com/_api/
+  tags:
+  - Web
+  properties:
+  - type: OpenAPI
+    url: openapi/microsoft-sharepoint-web-api-openapi.yml
+  - type: Documentation
+    url: >-
+      https://learn.microsoft.com/en-us/sharepoint/dev/sp-add-ins/get-to-know-the-sharepoint-rest-service
+  - type: Reference
+    url: https://learn.microsoft.com/en-us/sharepoint/dev/apis/sharepoint-rest-graph
 common:
   - type: AgenticAccess
     url: agentic-access/microsoft-sharepoint-agentic-access.yml
