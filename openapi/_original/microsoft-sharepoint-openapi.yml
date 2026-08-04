@@ -1,0 +1,226 @@
+openapi: 3.1.0
+info:
+  title: SharePoint REST API
+  description: >-
+    Minimal OpenAPI definition for the SharePoint Online REST/OData web
+    service exposing site, web, list, and list item resources.
+  version: '1.0'
+  x-generated-from: https://learn.microsoft.com/en-us/sharepoint/dev/sp-add-ins/get-to-know-the-sharepoint-rest-service
+  x-generated-by: claude-crawl-2026-05-08
+servers:
+  - url: https://{tenant}.sharepoint.com/_api
+    description: SharePoint site collection root REST endpoint
+    variables:
+      tenant:
+        default: contoso
+security:
+  - bearerAuth: []
+tags:
+  - name: Site
+  - name: Web
+  - name: Lists
+  - name: ListItems
+  - name: Files
+paths:
+  /site:
+    get:
+      tags: [Site]
+      summary: Get site collection
+      operationId: getSite
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericObject'
+  /web:
+    get:
+      tags: [Web]
+      summary: Get web (site)
+      operationId: getWeb
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericObject'
+  /web/title:
+    get:
+      tags: [Web]
+      summary: Get web title
+      operationId: getWebTitle
+      responses:
+        '200':
+          description: OK
+  /web/lists:
+    get:
+      tags: [Lists]
+      summary: List all lists on the site
+      operationId: getLists
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericObject'
+    post:
+      tags: [Lists]
+      summary: Create a list
+      operationId: createList
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenericObject'
+      responses:
+        '200':
+          description: OK
+        '201':
+          description: Created
+  /web/lists/getbytitle('{listTitle}'):
+    parameters:
+      - in: path
+        name: listTitle
+        required: true
+        schema: { type: string }
+    get:
+      tags: [Lists]
+      summary: Get list by title
+      operationId: getListByTitle
+      responses:
+        '200':
+          description: OK
+    delete:
+      tags: [Lists]
+      summary: Delete list
+      operationId: deleteList
+      responses:
+        '200':
+          description: OK
+  /web/lists/getbytitle('{listTitle}')/items:
+    parameters:
+      - in: path
+        name: listTitle
+        required: true
+        schema: { type: string }
+    get:
+      tags: [ListItems]
+      summary: Get list items
+      operationId: getListItems
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericObject'
+    post:
+      tags: [ListItems]
+      summary: Create list item
+      operationId: createListItem
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenericObject'
+      responses:
+        '200':
+          description: OK
+        '201':
+          description: Created
+  /web/lists/getbytitle('{listTitle}')/items({itemId}):
+    parameters:
+      - in: path
+        name: listTitle
+        required: true
+        schema: { type: string }
+      - in: path
+        name: itemId
+        required: true
+        schema: { type: integer }
+    get:
+      tags: [ListItems]
+      summary: Get list item
+      operationId: getListItem
+      responses:
+        '200':
+          description: OK
+    delete:
+      tags: [ListItems]
+      summary: Delete list item
+      operationId: deleteListItem
+      responses:
+        '200':
+          description: OK
+  /web/GetFolderByServerRelativeUrl('{folderPath}'):
+    parameters:
+      - in: path
+        name: folderPath
+        required: true
+        schema: { type: string }
+    get:
+      tags: [Files]
+      summary: Get folder by server-relative URL
+      operationId: getFolder
+      responses:
+        '200':
+          description: OK
+  /web/GetFolderByServerRelativeUrl('{folderPath}')/Files:
+    parameters:
+      - in: path
+        name: folderPath
+        required: true
+        schema: { type: string }
+    get:
+      tags: [Files]
+      summary: List files in folder
+      operationId: listFolderFiles
+      responses:
+        '200':
+          description: OK
+  /web/GetFileByServerRelativeUrl('{filePath}')/$value:
+    parameters:
+      - in: path
+        name: filePath
+        required: true
+        schema: { type: string }
+    get:
+      tags: [Files]
+      summary: Download file content
+      operationId: downloadFile
+      responses:
+        '200':
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+  /$batch:
+    post:
+      summary: Submit OData $batch request
+      operationId: batch
+      requestBody:
+        required: true
+        content:
+          multipart/mixed:
+            schema:
+              type: string
+      responses:
+        '200':
+          description: OK
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  schemas:
+    GenericObject:
+      type: object
+      additionalProperties: true

@@ -1,0 +1,24 @@
+{
+  "provider": "microsoft-sharepoint",
+  "sources": [
+    "microsoft-sharepoint-batch-api-openapi.yml",
+    "microsoft-sharepoint-files-api-openapi.yml",
+    "microsoft-sharepoint-listitems-api-openapi.yml",
+    "microsoft-sharepoint-lists-api-openapi.yml",
+    "microsoft-sharepoint-site-api-openapi.yml",
+    "microsoft-sharepoint-web-api-openapi.yml"
+  ],
+  "outputs": [
+    "microsoft-sharepoint-batch-api-openapi.yml",
+    "microsoft-sharepoint-files-api-openapi.yml",
+    "microsoft-sharepoint-listitems-api-openapi.yml",
+    "microsoft-sharepoint-lists-api-openapi.yml",
+    "microsoft-sharepoint-site-api-openapi.yml",
+    "microsoft-sharepoint-web-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
