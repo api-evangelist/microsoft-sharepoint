@@ -1,0 +1,110 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "SharePoint REST $batch $batch ListItems API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "ListItems",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get list items",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{tenant}.sharepoint.com/_api/web/lists/getbytitle(':listTitle')/items",
+            "params": [
+              {
+                "name": "listTitle",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get list items"
+        },
+        {
+          "info": {
+            "name": "Create list item",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{tenant}.sharepoint.com/_api/web/lists/getbytitle(':listTitle')/items",
+            "params": [
+              {
+                "name": "listTitle",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create list item"
+        },
+        {
+          "info": {
+            "name": "Get list item",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{tenant}.sharepoint.com/_api/web/lists/getbytitle(':listTitle')/items(:itemId)",
+            "params": [
+              {
+                "name": "listTitle",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "itemId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get list item"
+        },
+        {
+          "info": {
+            "name": "Delete list item",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{tenant}.sharepoint.com/_api/web/lists/getbytitle(':listTitle')/items(:itemId)",
+            "params": [
+              {
+                "name": "listTitle",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "itemId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete list item"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

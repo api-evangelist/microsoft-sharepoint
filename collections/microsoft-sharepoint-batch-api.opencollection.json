@@ -1,0 +1,35 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "SharePoint REST $batch $batch $batch API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "$batch",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Submit OData $batch request",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{tenant}.sharepoint.com/_api/$batch"
+          },
+          "docs": "Submit OData $batch request"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

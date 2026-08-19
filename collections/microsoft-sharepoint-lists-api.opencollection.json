@@ -1,0 +1,86 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "SharePoint REST $batch $batch Lists API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Lists",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List all lists on the site",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{tenant}.sharepoint.com/_api/web/lists"
+          },
+          "docs": "List all lists on the site"
+        },
+        {
+          "info": {
+            "name": "Create a list",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{tenant}.sharepoint.com/_api/web/lists",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a list"
+        },
+        {
+          "info": {
+            "name": "Get list by title",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{tenant}.sharepoint.com/_api/web/lists/getbytitle(':listTitle')",
+            "params": [
+              {
+                "name": "listTitle",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get list by title"
+        },
+        {
+          "info": {
+            "name": "Delete list",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{tenant}.sharepoint.com/_api/web/lists/getbytitle(':listTitle')",
+            "params": [
+              {
+                "name": "listTitle",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete list"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

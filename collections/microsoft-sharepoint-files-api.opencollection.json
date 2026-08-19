@@ -1,0 +1,78 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "SharePoint REST $batch $batch Files API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Files",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get folder by server-relative URL",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{tenant}.sharepoint.com/_api/web/GetFolderByServerRelativeUrl(':folderPath')",
+            "params": [
+              {
+                "name": "folderPath",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get folder by server-relative URL"
+        },
+        {
+          "info": {
+            "name": "List files in folder",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{tenant}.sharepoint.com/_api/web/GetFolderByServerRelativeUrl(':folderPath')/Files",
+            "params": [
+              {
+                "name": "folderPath",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List files in folder"
+        },
+        {
+          "info": {
+            "name": "Download file content",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{tenant}.sharepoint.com/_api/web/GetFileByServerRelativeUrl(':filePath')/$value",
+            "params": [
+              {
+                "name": "filePath",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Download file content"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
