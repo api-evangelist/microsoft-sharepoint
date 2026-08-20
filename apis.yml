@@ -23,6 +23,12 @@ tags:
   - Collaboration
   - Content Management
   - Microsoft
+  - Microsoft-365
+  - SharePoint
+tags_raw:
+  - Collaboration
+  - Content Management
+  - Microsoft
   - Microsoft 365
   - SharePoint
 url: https://raw.githubusercontent.com/api-evangelist/microsoft-sharepoint/refs/heads/main/apis.yml
@@ -50,6 +56,10 @@ apis:
 - aid: microsoft-sharepoint:webhooks-api
   name: SharePoint Webhooks API
   tags:
+  - Event
+  - SharePoint
+  - Webhook
+  tags_raw:
   - Events
   - SharePoint
   - Webhooks
@@ -106,6 +116,8 @@ apis:
     https://learn.microsoft.com/en-us/sharepoint/dev/sp-add-ins/get-to-know-the-sharepoint-rest-service
   baseURL: https://{tenant}.sharepoint.com/_api/
   tags:
+  - Batch
+  tags_raw:
   - $batch
   properties:
   - type: OpenAPI
@@ -122,6 +134,8 @@ apis:
     https://learn.microsoft.com/en-us/sharepoint/dev/sp-add-ins/get-to-know-the-sharepoint-rest-service
   baseURL: https://{tenant}.sharepoint.com/_api/
   tags:
+  - File
+  tags_raw:
   - Files
   properties:
   - type: OpenAPI
@@ -138,6 +152,8 @@ apis:
     https://learn.microsoft.com/en-us/sharepoint/dev/sp-add-ins/get-to-know-the-sharepoint-rest-service
   baseURL: https://{tenant}.sharepoint.com/_api/
   tags:
+  - List Items
+  tags_raw:
   - ListItems
   properties:
   - type: OpenAPI
@@ -154,6 +170,8 @@ apis:
     https://learn.microsoft.com/en-us/sharepoint/dev/sp-add-ins/get-to-know-the-sharepoint-rest-service
   baseURL: https://{tenant}.sharepoint.com/_api/
   tags:
+  - List
+  tags_raw:
   - Lists
   properties:
   - type: OpenAPI
