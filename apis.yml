@@ -128,7 +128,7 @@ apis:
     https://learn.microsoft.com/en-us/sharepoint/dev/sp-add-ins/get-to-know-the-sharepoint-rest-service
   baseURL: https://{tenant}.sharepoint.com/_api/
   tags:
-  - Batch
+  - $batch
   tags_raw:
   - $batch
   properties:
@@ -164,7 +164,7 @@ apis:
     https://learn.microsoft.com/en-us/sharepoint/dev/sp-add-ins/get-to-know-the-sharepoint-rest-service
   baseURL: https://{tenant}.sharepoint.com/_api/
   tags:
-  - List Items
+  - ListItems
   tags_raw:
   - ListItems
   properties:
